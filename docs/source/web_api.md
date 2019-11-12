@@ -75,7 +75,7 @@ boolean    `window.bcbWeb.ready`
 [Account](#Account)    `window.bcbWeb.selectedAccount`
 
 ### selectedChain
-[Chain](#Chain)    `window.bcbWeb.selectedAccount`
+[Chain](#Chain)    `window.bcbWeb.selectedChain`
 
 ## 方法
 
@@ -123,11 +123,11 @@ window.bcbWeb.onStateChanged(function callback)
 
 `callback`
 
-function类型。事件到来时，一个回调方法将被执行。`callback`参数如下
+  function类型。事件到来时，一个回调方法将被执行。`callback`参数如下
 
-- `ready`
+-	`ready`
 	
-	boolean类型。同[ready](#ready)。
+	boolean类型。同[ready](#ready)属性。
 
 **返回**
 
@@ -153,9 +153,11 @@ window.bcbWeb.onAccountChanged(function callback)
 **参数**
 
 `callback`
-function类型。事件到来时，一个回调方法将被执行。
-`callback`参数如下
-	`account`
+
+  function类型。事件到来时，一个回调方法将被执行。`callback`参数如下
+
+-	`account`
+
 	[Account](#Account)类型。
 
 **返回**
@@ -182,9 +184,11 @@ window.bcbWeb.onChainChanged(function callback)
 **参数**
 
 `callback`
-function类型。事件到来时，一个回调方法将被执行。
-`callback`参数如下
-	`chain`
+
+  function类型。事件到来时，一个回调方法将被执行。`callback`参数如下
+
+-	`chain`
+
 	[Chain](#Chain)类型。
 
 **返回**
@@ -211,13 +215,16 @@ getBalance(string tokenAddress, function callback)
 **参数**
 
 `tokenAddress`
-string类型。代币地址。
+
+  string类型。代币地址。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。
-`callback`参数如下
-	`balance`
-    number类型。账户余额，单位为最小单位，由代币定义。
+
+  function类型 。一个回调方法将被执行。`callback`参数如下
+
+-	`balance`
+
+	number类型。账户余额，单位为最小单位，由代币定义。
 
 **返回**
 
@@ -227,7 +234,9 @@ function类型 。一个回调方法将被执行。
 **示例**
 
 ```javascript
-window.bcbWeb.getBalance('devtestKpSAocBacESGWjvuncn4oAjADbX22Sqit').then(console.log).catch(console.error)
+window.bcbWeb.getBalance('devtestKpSAocBacESGWjvuncn4oAjADbX22Sqit')
+.then(console.log)
+.catch(console.error)
 ```
 
 ### getBalanceBySymbol
@@ -242,12 +251,15 @@ getBalanceBySymbol(string tokenSymbol, function callback)
 **参数**
 
 `tokenSymbol`
-string类型。代币符号，不区分大小写。
+
+  string类型。代币符号，不区分大小写。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。
-`callback`参数如下
-	`balance`
+
+  function类型 。一个回调方法将被执行。`callback`参数如下
+
+-	`balance`
+
 	number类型。账户余额，单位为最小单位，由代币定义。
 
 **返回**
@@ -258,8 +270,14 @@ function类型 。一个回调方法将被执行。
 **示例**
 
 ```javascript
-window.bcbWeb.getBalanceBySymbol('DC').then(console.log).catch(console.error)
-window.bcbWeb.getBalanceBySymbol('dc').then(console.log).catch(console.error)
+// Symbol不区分大小写
+window.bcbWeb.getBalanceBySymbol('DC')
+.then(console.log)
+.catch(console.error)
+
+window.bcbWeb.getBalanceBySymbol('dc')
+.then(console.log)
+.catch(console.error)
 ```
 
 ### sendTransaction
@@ -274,12 +292,15 @@ sendTransaction(Transaction transaction, function callback)
 **参数**
 
 `transaction`
-Transaction类型。
+
+  [Transaction](#Transaction)类型。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。
-`callback`参数如下
-	`hash`
+
+  function类型 。一个回调方法将被执行。`callback`参数如下
+
+-	`hash`
+
 	*string*类型。发送成功返回交易hash，hex编码。
 
 **返回**
@@ -327,12 +348,15 @@ signTransaction(Transaction transaction, function callback)
 **参数**
 
 `transaction`
-Transaction类型。
+
+  [Transaction](#Transaction)类型。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。
-`callback`参数如下
-	`signedTransaction`
+
+  function类型 。一个回调方法将被执行。`callback`参数如下
+
+-	`signedTransaction`
+	
 	string类型。签名后的交易数据，可广播到网络。
 
 **返回**
@@ -382,12 +406,15 @@ signMessage(string message, function callback)
 **参数**
 
 `message`
-string类型。hex编码。
+
+  string类型。hex编码。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。
-`callback`参数如下
-	`result`
+
+  function类型 。一个回调方法将被执行。`callback`参数如下
+
+-	`result`
+	
 	object类型。定义如下
 
 | 属性      | 类型     | 描述          |

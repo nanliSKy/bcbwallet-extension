@@ -1,16 +1,16 @@
-.. _header-n16868:
+.. _header-n17655:
 
 window.bcbWeb
 =============
 
 此模块提供BCB钱包Web接口。
 
-.. _header-n16871:
+.. _header-n17658:
 
 类型
 ----
 
-.. _header-n16872:
+.. _header-n17659:
 
 Account
 ~~~~~~~
@@ -22,7 +22,7 @@ address string 账户地址
 name    string 账户名
 ======= ====== ========
 
-.. _header-n16886:
+.. _header-n17673:
 
 Chain
 ~~~~~
@@ -34,7 +34,7 @@ network string 网络
 chain   string 链
 ======= ====== ====
 
-.. _header-n16900:
+.. _header-n17687:
 
 ContractCall
 ~~~~~~~~~~~~
@@ -78,7 +78,7 @@ bool          string "true", "false"
 []            []     []string: ["a", "b", "c"], []int: ["1", "2", "3"]
 ============= ====== ====================================================================
 
-.. _header-n16968:
+.. _header-n17755:
 
 Transaction
 ~~~~~~~~~~~
@@ -90,15 +90,15 @@ version  number                               **可选**\ 。网络主版本，�
 note     string                               交易备注
 nonce    string                               **可选**\ 。账户nonce，默认从网络查询
 gasLimit string                               允许消耗的gas量
-calls    `ContractCall <#header-n16900>`__ [] 合约方法调用体。当前允许在一次交易中最多调用2个合约方法。
+calls    `ContractCall <#header-n17687>`__ [] 合约方法调用体。当前允许在一次交易中最多调用2个合约方法。
 ======== ==================================== =========================================================
 
-.. _header-n16994:
+.. _header-n17781:
 
 属性
 ----
 
-.. _header-n16995:
+.. _header-n17782:
 
 ready
 ~~~~~
@@ -112,21 +112,21 @@ true  钱包已解锁
 false 钱包未解锁，或未创建钱包
 ===== ========================
 
-.. _header-n17007:
+.. _header-n17794:
 
 selectedAccount
 ~~~~~~~~~~~~~~~
 
-`Account <#header-n16872>`__ ``window.bcbWeb.selectedAccount``
+`Account <#header-n17659>`__ ``window.bcbWeb.selectedAccount``
 
-.. _header-n17009:
+.. _header-n17796:
 
 selectedChain
 ~~~~~~~~~~~~~
 
-`Chain <#header-n16886>`__ ``window.bcbWeb.selectedAccount``
+`Chain <#header-n17673>`__ ``window.bcbWeb.selectedChain``
 
-.. _header-n17011:
+.. _header-n17798:
 
 方法
 ----
@@ -162,7 +162,7 @@ callback使用Node.js风格callback(err, result) { }。
    	console.error(err)
    })
 
-.. _header-n17023:
+.. _header-n17810:
 
 onStateChanged
 ~~~~~~~~~~~~~~
@@ -183,7 +183,7 @@ function类型。事件到来时，一个回调方法将被执行。\ ``callback
 
 -  ``ready``
 
-   boolean类型。同\ `ready <#header-n16995>`__\ 属性。
+   boolean类型。同\ `ready <#header-n17782>`__\ 属性。
 
 **返回**
 
@@ -197,7 +197,7 @@ undefined。
    	console.log(ready)
    })
 
-.. _header-n17038:
+.. _header-n17825:
 
 onAccountChanged
 ~~~~~~~~~~~~~~~~
@@ -218,7 +218,7 @@ function类型。事件到来时，一个回调方法将被执行。\ ``callback
 
 -  ``account``
 
-   `Account <#header-n16872>`__\ 类型。
+   `Account <#header-n17659>`__\ 类型。
 
 **返回**
 
@@ -232,7 +232,7 @@ undefined。
    	console.log(account)
    })
 
-.. _header-n17053:
+.. _header-n17840:
 
 onChainChanged
 ~~~~~~~~~~~~~~
@@ -253,7 +253,7 @@ function类型。事件到来时，一个回调方法将被执行。\ ``callback
 
 -  ``chain``
 
-   `Chain <#header-n16886>`__\ 类型。
+   `Chain <#header-n17673>`__\ 类型。
 
 **返回**
 
@@ -267,7 +267,7 @@ undefined。
    	console.log(chain)
    })
 
-.. _header-n17068:
+.. _header-n17855:
 
 getBalance
 ~~~~~~~~~~
@@ -306,7 +306,7 @@ function类型 。一个回调方法将被执行。\ ``callback``\ 参数如下
    .then(console.log)
    .catch(console.error)
 
-.. _header-n17085:
+.. _header-n17872:
 
 getBalanceBySymbol
 ~~~~~~~~~~~~~~~~~~
@@ -350,7 +350,7 @@ function类型 。一个回调方法将被执行。\ ``callback``\ 参数如下
    .then(console.log)
    .catch(console.error)
 
-.. _header-n17102:
+.. _header-n17889:
 
 sendTransaction
 ~~~~~~~~~~~~~~~
@@ -367,7 +367,7 @@ sendTransaction
 
 ``transaction``
 
-`Transaction <#header-n16968>`__\ 类型。
+`Transaction <#header-n17755>`__\ 类型。
 
 ``callback`` \| 可选
 
@@ -409,7 +409,7 @@ function类型 。一个回调方法将被执行。\ ``callback``\ 参数如下
        console.error(err)
    })
 
-.. _header-n17119:
+.. _header-n17906:
 
 signTransaction
 ~~~~~~~~~~~~~~~
@@ -426,7 +426,7 @@ signTransaction
 
 ``transaction``
 
-`Transaction <#header-n16968>`__\ 类型。
+`Transaction <#header-n17755>`__\ 类型。
 
 ``callback`` \| 可选
 
@@ -469,7 +469,7 @@ function类型 。一个回调方法将被执行。\ ``callback``\ 参数如下
        console.error(err)
    })
 
-.. _header-n17137:
+.. _header-n17924:
 
 signMessage
 ~~~~~~~~~~~
