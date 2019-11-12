@@ -25,17 +25,32 @@
 | method   | string    | 合约方法原型 |
 | params   | object [] | 合约方法参数 |
 
-合约方法原型格式
+- 合约方法原型格式
+
 ```
 FuncName(ParamType1,ParamType2...)ReturnType
 ```
 原型使用golang语法，不允许空格。
 
-合约方法参数格式
+- 合约方法参数格式
+
 ```
 [ arg1, arg2... ]
 ```
 arg1为ParamType1类型编码，arg2为ParamType2类型编码。
+
+- 参数编码格式
+
+| 类型          | JSON   | 示例                                                         |
+| ------------- | ------ | ------------------------------------------------------------ |
+| string        | string | "bcbwallet"                                                  |
+| []byte        | string | "bcbwallet"                                                  |
+| types.Address | string | "bcbtest9agiEGfqASERLuGv9Ytqn5XhfiEP3Zzsu"                   |
+| types.Pubkey  | string | "0xdc6b51f210b4016bb18001c06b5202cddf675ffa00ff5b3ca114c7e060578ee0" |
+| types.Number  | string | "1000", "1000000000000000.123"                               |
+| int/uint      | string | "1000"                                                       |
+| bool          | string | "true", "false"                                              |
+| []            | []     | []string: ["a", "b", "c"], []int: ["1", "2", "3"]            |
 
 ### Transaction
 
@@ -71,7 +86,7 @@ callback使用Node.js风格callback(err, result) { }。
 
 以`getBalance`为例
 
-**callback方式**
+- callback方式
 
 ```javascript
 // callback
@@ -83,7 +98,7 @@ function cb(err, result) {
 window.bcbWeb.getBalance(tokenAddress, cb)
 ```
 
-**Promise方式**
+- Promise方式
 
 ```javascript
 // 没有传入callback，返回一个promise
@@ -107,9 +122,12 @@ window.bcbWeb.onStateChanged(function callback)
 **参数**
 
 `callback`
-function类型。事件到来时，一个回调方法将被执行。回调方法参数如下
-    `ready`
-    boolean类型。同[ready](#ready)。
+
+function类型。事件到来时，一个回调方法将被执行。`callback`参数如下
+
+- `ready`
+	
+	boolean类型。同[ready](#ready)。
 
 **返回**
 
@@ -135,8 +153,9 @@ window.bcbWeb.onAccountChanged(function callback)
 **参数**
 
 `callback`
-function类型。事件到来时，一个回调方法将被执行。回调方法参数如下
-    `account`
+function类型。事件到来时，一个回调方法将被执行。
+`callback`参数如下
+	`account`
 	[Account](#Account)类型。
 
 **返回**
@@ -163,7 +182,8 @@ window.bcbWeb.onChainChanged(function callback)
 **参数**
 
 `callback`
-function类型。事件到来时，一个回调方法将被执行。回调方法参数如下
+function类型。事件到来时，一个回调方法将被执行。
+`callback`参数如下
 	`chain`
 	[Chain](#Chain)类型。
 
@@ -194,8 +214,9 @@ getBalance(string tokenAddress, function callback)
 string类型。代币地址。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。回调方法参数如下
-    `balance`
+function类型 。一个回调方法将被执行。
+`callback`参数如下
+	`balance`
     number类型。账户余额，单位为最小单位，由代币定义。
 
 **返回**
@@ -225,7 +246,7 @@ string类型。代币符号，不区分大小写。
 
 `callback` | 可选
 function类型 。一个回调方法将被执行。
-回调方法参数如下
+`callback`参数如下
 	`balance`
 	number类型。账户余额，单位为最小单位，由代币定义。
 
@@ -256,7 +277,8 @@ sendTransaction(Transaction transaction, function callback)
 Transaction类型。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。回调方法参数如下
+function类型 。一个回调方法将被执行。
+`callback`参数如下
 	`hash`
 	*string*类型。发送成功返回交易hash，hex编码。
 
@@ -308,7 +330,8 @@ signTransaction(Transaction transaction, function callback)
 Transaction类型。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。回调方法参数如下
+function类型 。一个回调方法将被执行。
+`callback`参数如下
 	`signedTransaction`
 	string类型。签名后的交易数据，可广播到网络。
 
@@ -362,7 +385,8 @@ signMessage(string message, function callback)
 string类型。hex编码。
 
 `callback` | 可选
-function类型 。一个回调方法将被执行。回调方法参数如下
+function类型 。一个回调方法将被执行。
+`callback`参数如下
 	`result`
 	object类型。定义如下
 

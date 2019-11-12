@@ -10,7 +10,7 @@ Welcome to BCB Wallet's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   web_api.md
+   web_api.rst
 
 Indices and tables
 ==================
