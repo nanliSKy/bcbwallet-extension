@@ -9,7 +9,7 @@ $ yarn install
 $ lerna bootstrap
 ```
 
-## Building
+#### Building
 ```sh
 # Build all sources
 $ yarn build
@@ -21,14 +21,20 @@ $ yarn build:core
 ```
 
 ```sh
-# Build only the popup component
+# Build only the popup component 
 $ yarn build:popup
+# Above doesn't work temporily
+$ cd packages/popup
+$ npm run release
 ```
-
-## Linting
+#### Linting
 ```sh
 # Run linter over the ./packages folder
 $ yarn lint
 ```
+
+## Documentation
+
+Browse the [API Documentation](https://bcbwallet.readthedocs.io/en/latest/web_api.html) online.
 
 ## Links
